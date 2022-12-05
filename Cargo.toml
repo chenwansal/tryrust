@@ -14,5 +14,5 @@ bevy = { version = "0.9.0" }
 
 [[bin]]
 name = "tryrust"
-path = "main.rs"
+path = "src/main.rs"
 
