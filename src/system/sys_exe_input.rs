@@ -6,19 +6,20 @@ pub fn tick_keyboard_input(
     mut input_entity: Query<&mut ComGlobalInput>,
 ) {
     let mut input_mut = input_entity.single_mut();
+    let dir_ptr = &mut input_mut.move_dir;
     if input.pressed(KeyCode::A) {
-        input_mut.move_dir.x = -1.0;
+        dir_ptr.x = -1.0;
     } else if input.pressed(KeyCode::D) {
-        input_mut.move_dir.x = 1.0;
+        dir_ptr.x = 1.0;
     } else {
-        input_mut.move_dir.x = 0.0;
+        dir_ptr.x = 0.0;
     }
 
     if input.pressed(KeyCode::W) {
-        input_mut.move_dir.y = 1.0;
+        dir_ptr.y = 1.0;
     } else if input.pressed(KeyCode::S) {
-        input_mut.move_dir.y = -1.0;
+        dir_ptr.y = -1.0;
     } else {
-        input_mut.move_dir.y = 0.0;
+        dir_ptr.y = 0.0;
     }
 }
